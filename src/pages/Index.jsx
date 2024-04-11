@@ -30,9 +30,17 @@ const Index = () => {
     setTodos(updatedTodos);
   };
 
+  const handleClearAll = () => {
+    setTodos([]);
+    localStorage.removeItem("todos");
+  };
+
   return (
     <Box maxWidth="400px" margin="auto" mt={8}>
-      <Heading mb={8}>Todo App</Heading>
+      <Heading mb={4}>Todo App</Heading>
+      <Button colorScheme="red" mb={8} onClick={handleClearAll}>
+        Clear All
+      </Button>
       <VStack spacing={4} align="stretch">
         <HStack>
           <Input value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="Enter a new todo" />
