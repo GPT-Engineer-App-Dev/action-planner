@@ -9,9 +9,19 @@ const images = [
     caption: "Image 1",
   },
   {
+    thumbnail: "https://example.com/images/llama-1-thumb.jpg",
+    fullSize: "https://example.com/images/llama-1-full.jpg",
+    caption: "Cute Llama",
+  },
+  {
     thumbnail: "https://picsum.photos/id/1015/250/150/",
     fullSize: "https://picsum.photos/id/1015/1500/1000/",
     caption: "Image 2",
+  },
+  {
+    thumbnail: "https://example.com/images/llama-2-thumb.jpg",
+    fullSize: "https://example.com/images/llama-2-full.jpg",
+    caption: "Llama in Field",
   },
   {
     thumbnail: "https://picsum.photos/id/1019/250/150/",
@@ -19,9 +29,24 @@ const images = [
     caption: "Image 3",
   },
   {
+    thumbnail: "https://example.com/images/llama-3-thumb.jpg",
+    fullSize: "https://example.com/images/llama-3-full.jpg",
+    caption: "Llama Portrait",
+  },
+  {
     thumbnail: "https://picsum.photos/id/1016/250/150/",
     fullSize: "https://picsum.photos/id/1016/1500/1000/",
     caption: "Image 4",
+  },
+  {
+    thumbnail: "https://example.com/images/llama-4-thumb.jpg",
+    fullSize: "https://example.com/images/llama-4-full.jpg",
+    caption: "Llama Closeup",
+  },
+  {
+    thumbnail: "https://example.com/images/llama-5-thumb.jpg",
+    fullSize: "https://example.com/images/llama-5-full.jpg",
+    caption: "Baby Llama",
   },
 ];
 
