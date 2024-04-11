@@ -9,8 +9,8 @@ const images = [
     caption: "Image 1",
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=250&h=150&fit=crop",
-    fullSize: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=1500&h=1000&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1544288158-cb8e0fea6f6d?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1544288158-cb8e0fea6f6d?w=1500&h=1000&fit=crop",
     caption: "Cute Llama",
   },
   {
@@ -19,8 +19,8 @@ const images = [
     caption: "Image 2",
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1535561941814-e9b3d1a7f110?w=250&h=150&fit=crop",
-    fullSize: "https://images.unsplash.com/photo-1535561941814-e9b3d1a7f110?w=1500&h=1000&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=1500&h=1000&fit=crop",
     caption: "Llama in Field",
   },
   {
@@ -29,8 +29,8 @@ const images = [
     caption: "Image 3",
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1541715298-9d64409f0b00?w=250&h=150&fit=crop",
-    fullSize: "https://images.unsplash.com/photo-1541715298-9d64409f0b00?w=1500&h=1000&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1519744346376-e6e68a2e022a?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1519744346376-e6e68a2e022a?w=1500&h=1000&fit=crop",
     caption: "Llama Portrait",
   },
   {
@@ -39,8 +39,8 @@ const images = [
     caption: "Image 4",
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1511292085-d3ab6d2d0f9e?w=250&h=150&fit=crop",
-    fullSize: "https://images.unsplash.com/photo-1511292085-d3ab6d2d0f9e?w=1500&h=1000&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=1500&h=1000&fit=crop",
     caption: "Llama Closeup",
   },
   {
