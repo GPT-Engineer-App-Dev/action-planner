@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, VStack, HStack, Text, Input, Button, IconButton, Checkbox, Heading } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
+import ImageGallery from "../components/ImageGallery";
 
 const Home = () => {
   const [todos, setTodos] = useState([]);
@@ -55,6 +56,9 @@ const Home = () => {
           </HStack>
         ))}
       </VStack>
+      <Box mt={8}>
+        <ImageGallery />
+      </Box>
     </Box>
   );
 };
