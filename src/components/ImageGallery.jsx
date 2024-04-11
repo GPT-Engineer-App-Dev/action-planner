@@ -9,8 +9,8 @@ const images = [
     caption: "Image 1",
   },
   {
-    thumbnail: "https://example.com/images/llama-1-thumb.jpg",
-    fullSize: "https://example.com/images/llama-1-full.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=1500&h=1000&fit=crop",
     caption: "Cute Llama",
   },
   {
@@ -19,8 +19,8 @@ const images = [
     caption: "Image 2",
   },
   {
-    thumbnail: "https://example.com/images/llama-2-thumb.jpg",
-    fullSize: "https://example.com/images/llama-2-full.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1535561941814-e9b3d1a7f110?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1535561941814-e9b3d1a7f110?w=1500&h=1000&fit=crop",
     caption: "Llama in Field",
   },
   {
@@ -29,8 +29,8 @@ const images = [
     caption: "Image 3",
   },
   {
-    thumbnail: "https://example.com/images/llama-3-thumb.jpg",
-    fullSize: "https://example.com/images/llama-3-full.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1541715298-9d64409f0b00?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1541715298-9d64409f0b00?w=1500&h=1000&fit=crop",
     caption: "Llama Portrait",
   },
   {
@@ -39,13 +39,13 @@ const images = [
     caption: "Image 4",
   },
   {
-    thumbnail: "https://example.com/images/llama-4-thumb.jpg",
-    fullSize: "https://example.com/images/llama-4-full.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1511292085-d3ab6d2d0f9e?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1511292085-d3ab6d2d0f9e?w=1500&h=1000&fit=crop",
     caption: "Llama Closeup",
   },
   {
-    thumbnail: "https://example.com/images/llama-5-thumb.jpg",
-    fullSize: "https://example.com/images/llama-5-full.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1518259102261-b40117eabbc9?w=250&h=150&fit=crop",
+    fullSize: "https://images.unsplash.com/photo-1518259102261-b40117eabbc9?w=1500&h=1000&fit=crop",
     caption: "Baby Llama",
   },
 ];
