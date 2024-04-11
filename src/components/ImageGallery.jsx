@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from "@chakra-ui/react";
 
 const images = [
   {
@@ -50,19 +50,43 @@ const images = [
   },
 ];
 
+
+
 const ImageGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
   return (
     <Box>
-      <SimpleGrid columns={[2, null, 4]} spacing="40px">
+      <Box display="flex" justifyContent="center">
+        <Image 
+          src={images[photoIndex].fullSize} 
+          alt={images[photoIndex].caption}
+          maxW="100%"
+          maxH="400px"
+          objectFit="contain"
+          onClick={() => setIsOpen(true)}
+          cursor="pointer"
+        />
+      </Box>
+      <Text mt={2} textAlign="center">
+        {images[photoIndex].caption}
+      </Text>
+      <Box mt={4} display="flex" justifyContent="center">
+        <Button 
+          onClick={() => setPhotoIndex((photoIndex - 1 + images.length) % images.length)}
+          mr={2}
+        >
+          Previous
+        </Button>
+        <Button onClick={() => setPhotoIndex((photoIndex + 1) % images.length)}>
+          Next
+        </Button>
+      </Box>
         {images.map((image, index) => (
           <Box
             key={index}
-            cursor="pointer"
             onClick={() => {
-              setPhotoIndex(index);
               setIsOpen(true);
             }}
           >
@@ -72,7 +96,7 @@ const ImageGallery = () => {
             </Text>
           </Box>
         ))}
-      </SimpleGrid>
+      
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
         <ModalOverlay />
@@ -83,8 +107,9 @@ const ImageGallery = () => {
             <Image src={images[photoIndex].fullSize} alt={images[photoIndex].caption} />
           </ModalBody>
           <ModalFooter>
-            <Button onClick={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}>Previous</Button>
-            <Button onClick={() => setPhotoIndex((photoIndex + 1) % images.length)}>Next</Button>
+            <Text>
+              Image {photoIndex + 1} of {images.length}
+            </Text>
           </ModalFooter>
         </ModalContent>
       </Modal>
