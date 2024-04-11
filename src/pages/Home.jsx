@@ -55,9 +55,6 @@ const Home = () => {
           </HStack>
         ))}
       </VStack>
-      <Box mt={8}>
-        <Text textAlign="center">Made with ❤️ by GPT Engineer</Text>
-      </Box>
     </Box>
   );
 };
