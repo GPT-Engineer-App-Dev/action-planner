@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
 
 const images = [
   {
@@ -50,7 +49,20 @@ const ImageGallery = () => {
         ))}
       </SimpleGrid>
 
-      {isOpen && <Lightbox mainSrc={images[photoIndex].fullSize} nextSrc={images[(photoIndex + 1) % images.length].fullSize} prevSrc={images[(photoIndex + images.length - 1) % images.length].fullSize} onCloseRequest={() => setIsOpen(false)} onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)} onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)} imageCaption={images[photoIndex].caption} />}
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{images[photoIndex].caption}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Image src={images[photoIndex].fullSize} alt={images[photoIndex].caption} />
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}>Previous</Button>
+            <Button onClick={() => setPhotoIndex((photoIndex + 1) % images.length)}>Next</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };
