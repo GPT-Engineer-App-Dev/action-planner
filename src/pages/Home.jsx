@@ -3,6 +3,7 @@ import { Box, VStack, HStack, Text, Input, Button, IconButton, Checkbox, Heading
 import { FaPlus } from "react-icons/fa";
 import ImageGallery from "../components/ImageGallery";
 import Calculator from "../components/Calculator";
+import JokeCarousel from "../components/JokeCarousel";
 
 const Home = () => {
   const [todos, setTodos] = useState([]);
@@ -62,6 +63,9 @@ const Home = () => {
       </Box>
       <Box mt={8}>
         <Calculator />
+      </Box>
+      <Box mt={8}>
+        <JokeCarousel />
       </Box>
     </Box>
   );
