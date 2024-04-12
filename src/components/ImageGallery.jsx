@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Image, Flex, Text, IconButton, Button, HStack } from "@chakra-ui/react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from "@chakra-ui/react";
 
 const images = [
   {
@@ -56,23 +57,22 @@ const ImageGallery = () => {
 
   return (
     <Box>
-      <SimpleGrid columns={[2, null, 4]} spacing="40px">
-        {images.map((image, index) => (
-          <Box
-            key={index}
-            cursor="pointer"
-            onClick={() => {
-              setPhotoIndex(index);
-              setIsOpen(true);
-            }}
-          >
-            <Image src={image.thumbnail} alt={image.caption} objectFit="cover" />
-            <Text mt={2} textAlign="center">
-              {image.caption}
-            </Text>
-          </Box>
-        ))}
-      </SimpleGrid>
+      <Flex justify="center" align="center" direction="column">
+        <Box>
+          <Button onClick={() => setIsOpen(true)}>
+            <Image src={images[photoIndex].thumbnail} alt={images[photoIndex].caption} objectFit="cover" />
+          </Button>
+        </Box>
+        <Flex width="100%" justify="space-between" align="center" mt={4}>
+          <IconButton icon={<FaArrowLeft />} aria-label="Previous Image" />
+          <IconButton icon={<FaArrowRight />} aria-label="Next Image" />
+        </Flex>
+        <HStack mt={4} spacing={2}>
+          {images.map((_, index) => (
+            <Box key={index} width="10px" height="10px" borderRadius="50%" bg={index === photoIndex ? "blue.500" : "gray.300"} />
+          ))}
+        </HStack>
+      </Flex>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
         <ModalOverlay />
