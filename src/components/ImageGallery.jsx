@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from "@chakra-ui/react";
+
 
 const images = [
   {
@@ -56,15 +57,13 @@ const ImageGallery = () => {
 
   return (
     <Box>
-      <SimpleGrid columns={[2, null, 4]} spacing="40px">
+      <Box display="flex" overflowX="auto">
         {images.map((image, index) => (
-          <Box
-            key={index}
-            cursor="pointer"
+          <Box key={index} flexShrink={0} w={["70%", "50%", "33%", "25%"]} p={2} cursor="pointer"
             onClick={() => {
               setPhotoIndex(index);
               setIsOpen(true);
-            }}
+            }}  
           >
             <Image src={image.thumbnail} alt={image.caption} objectFit="cover" />
             <Text mt={2} textAlign="center">
@@ -72,7 +71,7 @@ const ImageGallery = () => {
             </Text>
           </Box>
         ))}
-      </SimpleGrid>
+      </Box>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
         <ModalOverlay />
