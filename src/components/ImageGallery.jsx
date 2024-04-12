@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
+import { Box, Image, Text, IconButton, HStack } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from "@chakra-ui/react";
+import { FaChevronLeft, FaChevronRight, FaTimesCircle } from "react-icons/fa";
 
 const images = [
   {
@@ -56,23 +57,24 @@ const ImageGallery = () => {
 
   return (
     <Box>
-      <SimpleGrid columns={[2, null, 4]} spacing="40px">
-        {images.map((image, index) => (
-          <Box
-            key={index}
-            cursor="pointer"
-            onClick={() => {
-              setPhotoIndex(index);
-              setIsOpen(true);
-            }}
-          >
-            <Image src={image.thumbnail} alt={image.caption} objectFit="cover" />
-            <Text mt={2} textAlign="center">
-              {image.caption}
-            </Text>
-          </Box>
-        ))}
-      </SimpleGrid>
+      <Box maxWidth="600px" margin="0 auto">
+        <Image src={images[photoIndex].thumbnail} alt={images[photoIndex].caption} objectFit="cover" />
+        <Text mt={2} textAlign="center">
+          {images[photoIndex].caption}
+        </Text>
+        <HStack mt={4} justifyContent="space-between">
+          <IconButton 
+            icon={<FaChevronLeft />} 
+            aria-label="Previous Image"
+            onClick={() => setPhotoIndex((photoIndex - 1 + images.length) % images.length)}
+          />
+          <IconButton
+            icon={<FaChevronRight />}
+            aria-label="Next Image"
+            onClick={() => setPhotoIndex((photoIndex + 1) % images.length)}
+          />
+        </HStack>
+      </Box>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
         <ModalOverlay />
@@ -83,8 +85,7 @@ const ImageGallery = () => {
             <Image src={images[photoIndex].fullSize} alt={images[photoIndex].caption} />
           </ModalBody>
           <ModalFooter>
-            <Button onClick={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}>Previous</Button>
-            <Button onClick={() => setPhotoIndex((photoIndex + 1) % images.length)}>Next</Button>
+            <IconButton icon={<FaTimesCircle />} aria-label="Close Modal" onClick={() => setIsOpen(false)} />
           </ModalFooter>
         </ModalContent>
       </Modal>
