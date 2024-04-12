@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Box, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, IconButton, Button, HStack } from "@chakra-ui/react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from "@chakra-ui/react";
 
 const images = [
@@ -55,24 +56,22 @@ const ImageGallery = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
 
   return (
-    <Box>
-      <SimpleGrid columns={[2, null, 4]} spacing="40px">
-        {images.map((image, index) => (
-          <Box
-            key={index}
-            cursor="pointer"
-            onClick={() => {
-              setPhotoIndex(index);
-              setIsOpen(true);
-            }}
-          >
-            <Image src={image.thumbnail} alt={image.caption} objectFit="cover" />
-            <Text mt={2} textAlign="center">
-              {image.caption}
-            </Text>
-          </Box>
+    <Flex direction="column" align="center">
+      <Flex justify="center" align="center" mb={4}>
+        <IconButton icon={<FaArrowLeft />} aria-label="Previous Image" mr={4} />
+        <Box textAlign="center">
+          <Button onClick={() => setIsOpen(true)}>
+            <Image src={images[photoIndex].thumbnail} alt={images[photoIndex].caption} objectFit="cover" />
+          </Button>
+          <Text mt={2}>{images[photoIndex].caption}</Text>
+        </Box>
+        <IconButton icon={<FaArrowRight />} aria-label="Next Image" ml={4} />
+      </Flex>
+      <HStack justify="center" spacing={2} mb={4}>
+        {images.map((_, index) => (
+          <Box key={index} w={4} h={4} borderRadius="full" bg={index === photoIndex ? "blue.500" : "gray.300"} />
         ))}
-      </SimpleGrid>
+      </HStack>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl">
         <ModalOverlay />
@@ -88,7 +87,7 @@ const ImageGallery = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </Box>
+    </Flex>
   );
 };
 
